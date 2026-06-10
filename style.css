@@ -1,1 +1,388 @@
+/* ============================================
+   PLANEJAMENTO AGRINHO 2026 - CAMPO CONSCIENTE
+   ESTILOS PRINCIPAIS
+   ============================================ */
 
+/* RESET e configurações globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #2c3e2f;
+    background-color: #f5f9f0;
+    transition: all 0.3s ease;
+}
+
+/* Container principal - responsivo */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ============================================
+   CABEÇALHO
+   ============================================ */
+header {
+    background: linear-gradient(135deg, #2e7d32, #1b5e20);
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.logo h1 {
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+}
+
+.logo p, .subtitulo {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* ============================================
+   SISTEMA DE ABAS (NAVEGAÇÃO INTERATIVA)
+   ============================================ */
+.abas-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 30px 0 20px 0;
+    padding: 10px 0;
+    border-bottom: 2px solid #c8e6c9;
+}
+
+.aba-btn {
+    background-color: #e8f5e9;
+    border: 2px solid #4caf50;
+    color: #2e7d32;
+    padding: 12px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    font-family: inherit;
+}
+
+.aba-btn:hover {
+    background-color: #4caf50;
+    color: white;
+    transform: scale(1.02);
+}
+
+.aba-btn.ativo {
+    background-color: #2e7d32;
+    color: white;
+    border-color: #1b5e20;
+}
+
+/* Conteúdo das abas */
+.aba-conteudo {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.aba-conteudo.ativa {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   ARTIGOS E CONTEÚDO
+   ============================================ */
+article {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+h2 {
+    color: #1b5e20;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    border-left: 5px solid #4caf50;
+    padding-left: 15px;
+}
+
+h3 {
+    color: #2e7d32;
+    margin: 20px 0 10px 0;
+    font-size: 1.3rem;
+}
+
+p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+ul {
+    margin: 15px 0 15px 30px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* Imagens */
+.imagem-destaque {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin: 20px 0;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* Cards de dados */
+.cards-dados {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.card-dado {
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card-dado:hover {
+    transform: translateY(-5px);
+}
+
+.card-dado .numero {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1b5e20;
+    margin-bottom: 10px;
+}
+
+/* Alertas e destaques */
+.alerta, .dica-destaque {
+    background-color: #fff3e0;
+    border-left: 5px solid #ff9800;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.dica-destaque {
+    background-color: #e8f5e9;
+    border-left-color: #4caf50;
+}
+
+.alerta p, .dica-destaque p {
+    margin-bottom: 0;
+}
+
+/* ============================================
+   RODAPÉ
+   ============================================ */
+footer {
+    background-color: #1b5e20;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 50px;
+}
+
+footer p {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   ACESSIBILIDADE
+   ============================================ */
+.botao-acessibilidade {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #2e7d32;
+    color: white;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: all 0.3s;
+}
+
+.botao-acessibilidade:hover {
+    background-color: #1b5e20;
+    transform: scale(1.05);
+}
+
+.painel-acessibilidade {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    width: 220px;
+    z-index: 999;
+    display: none;
+    border: 2px solid #4caf50;
+}
+
+.painel-acessibilidade h3 {
+    margin-top: 0;
+    text-align: center;
+    color: #1b5e20;
+}
+
+.painel-acessibilidade button {
+    width: 100%;
+    margin: 8px 0;
+    padding: 10px;
+    border: none;
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.painel-acessibilidade button:hover {
+    background-color: #4caf50;
+    color: white;
+}
+
+.painel-acessibilidade.aberto {
+    display: block;
+}
+
+/* ============================================
+   ALTO CONTRASTE (acessibilidade)
+   ============================================ */
+.alto-contraste {
+    background-color: black !important;
+    color: yellow !important;
+}
+
+.alto-contraste header,
+.alto-contraste footer {
+    background-color: #111 !important;
+    color: yellow !important;
+}
+
+.alto-contraste article {
+    background-color: #222 !important;
+    color: #ff0 !important;
+}
+
+.alto-contraste .aba-btn {
+    background-color: #333 !important;
+    color: yellow !important;
+    border-color: yellow !important;
+}
+
+.alto-contraste .aba-btn.ativo {
+    background-color: yellow !important;
+    color: black !important;
+}
+
+.alto-contraste .card-dado {
+    background-color: #333 !important;
+    color: yellow !important;
+}
+
+.alto-contraste a {
+    color: yellow !important;
+}
+
+/* ============================================
+   RESPONSIVIDADE (mobile)
+   ============================================ */
+@media (max-width: 768px) {
+    .abas-nav {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .aba-btn {
+        text-align: center;
+    }
+    
+    article {
+        padding: 20px;
+    }
+    
+    h2 {
+        font-size: 1.4rem;
+    }
+    
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+    
+    .cards-dados {
+        grid-template-columns: 1fr;
+    }
+    
+    .botao-acessibilidade {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .card-dado .numero {
+        font-size: 2rem;
+    }
+}
+
+/* ============================================
+   AJUSTES DE FONTE (acessibilidade)
+   ============================================ */
+.fonte-pequena {
+    font-size: 12px;
+}
+
+.fonte-media {
+    font-size: 16px;
+}
+
+.fonte-grande {
+    font-size: 18px;
+}
+
+.fonte-muito-grande {
+    font-size: 20px;
+}
